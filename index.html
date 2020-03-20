@@ -4,15 +4,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>忍者研究协会</title>
-	<base href="https://cdn.jsdelivr.net/gh/PointTorrent/assets@master/hitachimako/" />
-	<style> 
+	<base href="https://cdn.jsdelivr.net/gh/PointTorrent/hitachimako@master/" />
+	<style type="text/css"> 
+		* {margin: 0;padding: 0;}
 		.radius img{border-radius:10px;}
-		.bgimg {filter:blur(5px); top:0%; left:0%; width:100%; size:cover}
-	 	.text {text-align:center; color: white; z-index:11; position:relative; font-family: "Microsoft YaHei","Arial","黑体","宋体",sans-serif; font-size:100%; font-weight:normal}
+		.bgimg {filter:blur(0px); top:0%; left:0%; width:100%; size:cover}
+	 	.text {text-align:center; color:white; z-index:11; position:relative; font-family:"Microsoft YaHei","Arial","黑体","宋体",sans-serif; font-size:100%; font-weight:normal}
 	  	@media screen and (min-width: 320px) {text {font-size: 14px;}}
 	  	@media screen and (min-width: 360px) {text {font-size: 16px;}}
 	  	@media screen and (min-width: 400px) {text {font-size: 18px;}}
 	  	@media screen and (min-width: 440px) {text {font-size: 20px;}}
+		.list {width: 1200px; height: 300px; overflow: hidden; position: absolute; left: 50%; margin-left: -600px;}
+		.box{margin-top: 80px;width: 100%;height: 340px;position: relative;}
   	</style>
 </head>
 
@@ -24,13 +27,36 @@
 </div>
 
 <div style="position:relative;z-index:2">
-	<div id="text-page" style="margin-top:10%;height:50%; position:relative;">
+	<div id="text-page" style="margin-top:10%; height:50%; position:relative;">
 		<div><h1 class="text" style="font-size:5em">忍者研究协会</h1></div>
 		<div><h2 class="text" style="font-size:2em">忍 者 研 究 セ ン タ ー</h2></div>
 		<div><h2 class="text" style="font-size:2em">Ninja Research Association</h2></div>
 	</div>
-	<div id="img-board" class="radius" style="background-color:black; margin-top:40%; position:relative;">
-		<table border="0" style=" ; margin-left:10%; width:80%;">
+	<div id="img-board" class="radius" style="background-color:black; margin-top:30%; position:relative;">
+		<table border="0" style="margin-left:10%; width:80%;">
+			<tbody>
+				<tr>
+					<td><h2 class="text" style="font-size:2em">HITACHIMAKO NO.1!!!</h2></td>
+				</tr>
+				<tr>
+					<td><a href="images/mako1.webp" target="_blank"><img src="images/mako1.webp" width="100%"></a></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="box">
+			<div class="list">
+				<ul>
+					<li class="p7"><a href="#"><img src="images/mako1.webp" alt="" /></a></li>
+					<li class="p6"><a href="#"><img src="images/mako2.webp" alt="" /></a></li>
+					<li class="p5"><a href="#"><img src="images/mako3.webp" alt="" /></a></li>
+					<li class="p4"><a href="#"><img src="images/mako4.webp" alt="" /></a></li>
+					<li class="p3"><a href="#"><img src="images/mako5.webp" alt="" /></a></li>
+					<li class="p2"><a href="#"><img src="images/mako6.webp" alt="" /></a></li>
+					<li class="p1"><a href="#"><img src="images/mako7.webp" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<table border="0" style="margin-left:10%; width:80%;">
   			<tbody>
     			<tr>
       				<td><a href="images/mako1.webp" target="_blank"><img src="images/mako1.webp" width="100%"></a></td>
@@ -60,6 +86,45 @@
 		</table>
 	</div>
 </div>
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	var $a=$(".buttons a");
+	var $s=$(".buttons span");
+	var cArr=["p7","p6","p5","p4","p3","p2","p1"];
+	var index=0;
+	//上一张
+	function previmg(){
+		cArr.unshift(cArr[6]);
+		cArr.pop();
+		//i是元素的索引，从0开始
+		//e为当前处理的元素
+		//each循环，当前处理的元素移除所有的class，然后添加数组索引i的class
+		$("li").each(function(i,e){
+			$(e).removeClass().addClass(cArr[i]);
+		})
+		index--;
+		if (index<0) {
+			index=6;
+		}
+		show();
+	}
+
+	//下一张
+	function nextimg(){
+		cArr.push(cArr[0]);
+		cArr.shift();
+		$("li").each(function(i,e){
+			$(e).removeClass().addClass(cArr[i]);
+		})
+		index++;
+		if (index>6) {
+			index=0;
+		}
+		show();
+	}
+</script>
+
 
 </body>
 </html>
