@@ -4,24 +4,99 @@
 	<meta charset="utf-8">
 	<meta name="baidu-site-verification" content="wXijBmwQhg" />
 	<title>忍者研究协会</title>
+	<!--<base href="https://cdn.jsdelivr.net/gh/PointTorrent/assets@master/hitachimako/" /> -->
 	<base href="https://cdn.jsdelivr.net/gh/PointTorrent/hitachimako@master/" />
-	<style type="text/css"> 
-		.radius img{border-radius:10px;}
-		.bgimg {filter:blur(0px); top:0%; left:0%; width:100%; size:cover}
-	 	.text {text-align:center; color:white; z-index:11; position:relative; font-family:"Microsoft YaHei","Arial","黑体","宋体",sans-serif; font-size:100%; font-weight:normal}
-	  	@media screen and (min-width: 320px) {text {font-size: 14px;}}
-	  	@media screen and (min-width: 360px) {text {font-size: 16px;}}
-	  	@media screen and (min-width: 400px) {text {font-size: 18px;}}
-	  	@media screen and (min-width: 440px) {text {font-size: 20px;}}
-  	</style>
+<style type="text/css"> 
+a{TEXT-DECORATION:none}
+.radius img{border-radius:10px;}
+.bgimg {filter:blur(0px); top:0%; left:0%; width:100%; size:cover}
+.text {text-align:center; color:white; position:relative; font-family:"Microsoft YaHei","Arial","黑体","宋体",sans-serif; font-size:100%; font-weight:normal}
+@media screen and (min-width: 320px) {text {font-size: 14px;}}
+@media screen and (min-width: 360px) {text {font-size: 16px;}}
+@media screen and (min-width: 400px) {text {font-size: 18px;}}
+@media screen and (min-width: 440px) {text {font-size: 20px;}}
+.playpause label {
+  	display: block;
+  	box-sizing: border-box;
+  	width: 0;
+  	height: 1.5em;
+  	border-color: transparent transparent transparent #FFFFFF;
+  	transition: 100ms all ease;
+  	cursor: pointer;
+  	border-style: solid;
+  	border-width: 0.75em 0 0.75em 1.3em;
+
+}
+.playpause input[type="checkbox"] {
+ 	position: absolute;
+ 	appearance: none;
+ 	-webkit-appearance: none;
+  	outline: none;
+ 	display: none;
+}
+.playpause input[type="checkbox"]:checked + label {
+  	border-style: double;
+  	border-width: 0px 0 0px 1.3em;
+}
+#topdiv{
+	opacity: 0%;
+	transition: 200ms all ease;
+}
+#topdiv:hover{
+	opacity: 100%;
+	transition: 200ms all ease;
+}
+#topDivText-Left{
+	opacity: 70%;
+	transition: 100ms all ease;
+}
+#topDivText-Left:hover{
+	opacity: 100%;
+	transition: 100ms all ease;
+}
+#topDivText-Mid{
+	opacity: 70%;
+	transition: 100ms all ease;
+}
+#topDivText-Mid:hover{
+	opacity: 100%;
+	transition: 100ms all ease;
+}	
+#topDivText-Right{
+	opacity: 70%;
+	transition: 100ms all ease;
+}
+#topDivText-Right:hover{
+	opacity: 100%;
+	transition: 100ms all ease;
+}
+	
+</style>
 	<link rel="icon" type="image/x-icon" href="images/favicon.webp" />
 </head>
 
-<body style="background-color:black">
+<body style="background-color:black;" onscroll="scrollSetOpacity()">
 
 
 <div id="bg" class="bgimg" style="background-color:black; margin-top:0%; position:fixed; z-index:1">
-	<img src="images/makobg-steam.webp" style="width:100%;"/>
+	<img alt="" loading="eager" src="images/makobg-steam.webp" style="width:100%;"/>
+</div>
+
+<div class="topBanner" id="topdiv" style="position:fixed; top:0; width: 100%;  background-color:black ; z-index:4;">
+	<br />
+	<div id="topDivText-Left" class="playpause" style="display:inline;left: 0%; position:relative">
+    	<input type="checkbox" value="0" id="playpause" name="check"/>
+		<label for="playpause" style="position:relative; float:left; margin-top:0.25em;" onClick="playmusic()" ></label>
+    	<a class="text" style="position:relative; font-size: 1.5em;">&nbsp;忍者之音</a>
+  	</div>
+	<div id="topDivText-Mid" style="display:inline; position:relative; left:50%; margin-left: -11.5em;" >
+		<a class="text" style="font-size: 1.5em; position:relative;" href="https://research.hitachimako.top#img-board" target="_self">忍者图鉴</a>
+	</div>
+	<div id="topDivText-Right" style="display:inline; position:relative; left:100%; margin-left: -11.5em;" >
+		<a class="text" style="font-size: 1.5em; position:relative;" href="https://research.hitachimako.top#video-player" target="_self">忍者视频</a>
+	</div>
+	<br />
+	<br />
 </div>
 
 <div style="position:relative;z-index:2">
@@ -34,49 +109,61 @@
 		<table border="0" style="margin-left:10%; width:80%;">
 			<tbody>
 				<tr>
-					<td><h2 class="text" style="font-size:2em">HITACHIMAKO NO.1!!!</h2></td>
+					<td><h2 class="text" style="font-size:2em">忍者图鉴</h2></td>
 				</tr>
 				<tr>
-					<td><a href="images/conv1.webp" target="_blank"><img src="images/conv1.webp" width="100%"></a></td>
+					<td><a href="images/conv1.webp" target="_blank"><img alt="" loading="lazy" src="images/conv1.webp" width="100%"></a></td>
 				</tr>
 			</tbody>
 		</table>
 		<table border="0" style="margin-left:10%; width:80%;">
   			<tbody>
     			<tr>
-      				<td><a href="images/mako1.webp" target="_blank"><img src="images/mako1.webp" width="100%"></a></td>
-      				<td><a href="images/mako2.webp" target="_blank"><img src="images/mako2.webp" width="100%"></a></td>
+      				<td><a href="images/mako1.webp" target="_blank"><img alt="" loading="lazy" src="images/mako1.webp" width="100%"></a></td>
+      				<td><a href="images/mako2.webp" target="_blank"><img alt="" loading="lazy" src="images/mako2.webp" width="100%"></a></td>
     			</tr>
     			<tr>
-		      		<td><a href="images/mako3.webp" target="_blank"><img src="images/mako3.webp" width="100%"></a></td>
- 		     		<td><a href="images/mako4.webp" target="_blank"><img src="images/mako4.webp" width="100%"></a></td>
+		      		<td><a href="images/mako3.webp" target="_blank"><img alt="" loading="lazy" src="images/mako3.webp" width="100%"></a></td>
+ 		     		<td><a href="images/mako4.webp" target="_blank"><img alt="" loading="lazy" src="images/mako4.webp" width="100%"></a></td>
  		   		</tr>
  		  		<tr>
-  		    		<td><a href="images/mako5.webp" target="_blank"><img src="images/mako5.webp" width="100%"></a></td>
- 		     		<td><a href="images/mako6.webp" target="_blank"><img src="images/mako6.webp" width="100%"></a></td>
+  		    		<td><a href="images/mako5.webp" target="_blank"><img alt="" loading="lazy" src="images/mako5.webp" width="100%"></a></td>
+ 		     		<td><a href="images/mako6.webp" target="_blank"><img alt="" loading="lazy" src="images/mako6.webp" width="100%"></a></td>
  		   		</tr>
  		   		<tr>
- 		     		<td><a href="images/mako7.webp" target="_blank"><img src="images/mako7.webp" width="100%"></a></td>
- 		     		<td><a href="images/mako7-2.webp" target="_blank"><img src="images/mako7-2.webp" width="100%"></a></td>
+ 		     		<td><a href="images/mako7.webp" target="_blank"><img alt="" loading="lazy" src="images/mako7.webp" width="100%"></a></td>
+ 		     		<td><a href="images/mako7-2.webp" target="_blank"><img alt="" loading="lazy" src="images/mako7-2.webp" width="100%"></a></td>
     			</tr>
     			<tr>
-      				<td><a href="images/mako8.webp" target="_blank"><img src="images/mako8.webp" width="100%"></a></td>
-      				<td><a href="images/mako10.webp" target="_blank"><img src="images/mako10.webp" width="100%"></a></td>
+      				<td><a href="images/mako8.webp" target="_blank"><img alt="" loading="lazy" src="images/mako8.webp" width="100%"></a></td>
+      				<td><a href="images/mako10.webp" target="_blank"><img alt="" loading="lazy" src="images/mako10.webp" width="100%"></a></td>
     			</tr>
     			<tr>
-      				<td><a href="images/mako9-2.webp" target="_blank"><img src="images/mako9-2.webp" width="100%"></a></td>
-     				<td><a href="images/mako9.webp" target="_blank"><img src="images/mako9.webp" width="100%"></a></td>
+      				<td><a href="images/mako9-2.webp" target="_blank"><img alt="" loading="lazy" src="images/mako9-2.webp" width="100%"></a></td>
+     				<td><a href="images/mako9.webp" target="_blank"><img alt="" loading="lazy" src="images/mako9.webp" width="100%"></a></td>
     			</tr>
   			</tbody>
 		</table>
 		<table border="0" style="margin-left:10%; width:80%;">
 			<tbody>
 				<tr>
-					<td><a href="images/conv2.webp" target="_blank"><img src="images/conv2.webp" width="100%"></a></td>
+					<td><a href="images/conv2.webp" target="_blank"><img alt="" loading="lazy" src="images/conv2.webp" width="100%"></a></td>
 				</tr>
 			</tbody>
 		</table>
+		<table border="0" id="video-player" style="text-align: center; margin-left:10%; width:80%;">
+			<tbody>
+				<tr>
+					<td><h2 class="text" style="font-size:2em">忍者视频</h2></td>
+				</tr>
+				<tr>
+					<td><video src="video/ED2_Mako960_comp.mp4" width="100%" controls="controls" poster="images/poster.webp" style="border-radius:10px;"/></td>
+				</tr>
+				<tr><td><a class="text" style="font-size:2em" href="https://research.hitachimako.top#top" target="_self">▲</a></td></tr>
+			</tbody>
+		</table>
 	</div>
+	
 	<div id="text-page2" style="margin-top:30%; height:100%; position:relative">
 		<div><h1 class="text" style="font-size:5em">忍者研究协会</h1></div>
 		<div><h2 class="text" style="font-size:2em">忍 者 研 究 セ ン タ ー</h2></div>
@@ -113,10 +200,22 @@
 		</table>
 	</div>
 </div>
+<audio src="audio/chrmusic.mp3" id="makomusic"> </audio>
 <script type="text/javascript">
 	var d = new Date();
 	var fullyear=d.getFullYear();
 	document.getElementById("time1").innerHTML=fullyear;
+	function playmusic(){
+		if(document.getElementById("playpause").checked){
+			document.getElementById("makomusic").pause();
+		}
+		else{
+			if(document.getElementById("playpause").value == "0"){alert("音量告警");}
+			document.getElementById("makomusic").play();
+			document.getElementById("playpause").value ="1";
+		}
+	}
+	//document.getElementById("topdiv").hover = true;
 </script>
 </body>
 </html>
